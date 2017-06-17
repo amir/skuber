@@ -3,7 +3,6 @@ resolvers += "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/
 
 val playws = "com.typesafe.play" %% "play-ws" % "2.6.0-M5"
 val playtest = "com.typesafe.play" %% "play-test" % "2.6.0-M5"
-val playWS = "com.typesafe.play" %% "play-ws" % "2.6.0-M5"
 val playAhcWS = "com.typesafe.play" %% "play-ahc-ws" % "2.6.0-M5"
 val playAhcWSStandalone = "com.typesafe.play" %% "play-ahc-ws-standalone" % "1.0.0-M6"
 val playIteratees = "com.typesafe.play" %% "play-iteratees" % "2.6.1"
@@ -36,7 +35,7 @@ lazy val commonSettings = Seq(
 lazy val skuberSettings = Seq(
   name := "skuber",
   libraryDependencies ++= Seq(playws, playIteratees, playIterateesReactiveStreams, playIterateesExtra,
-    playWS, playAhcWS, playAhcWSStandalone,
+    playAhcWS, playAhcWSStandalone,
     snakeYaml, commonsIO,
     scalaCheck % Test, specs2 % Test, mockws % Test, playtest % Test).
 				map(_.exclude("commons-logging","commons-logging").exclude("org.slf4j", "slf4j-api"))

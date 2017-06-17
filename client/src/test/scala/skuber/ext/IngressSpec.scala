@@ -19,8 +19,8 @@ class IngressSpec extends Specification {
             "/about" -> "another-service:80"
           ))
 
-      val readIng = Json.fromJson[Ingress](Json.toJson(ingress)).get
-      readIng mustEqual ingress
+    val readIng = Json.fromJson[Ingress](Json.toJson(ingress)).get
+    readIng mustEqual ingress
   }
 
   "An Ingress object with empty Path can be read directly from a JSON string" >> {
