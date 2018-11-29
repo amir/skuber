@@ -20,6 +20,7 @@ val akka = "com.typesafe.akka" %% "akka-actor" % "2.5.14"
 // Skuber uses akka logging, so the examples config uses the akka slf4j logger with logback backend
 val akkaSlf4j = "com.typesafe.akka" %% "akka-slf4j" % "2.5.14"
 val logback = "ch.qos.logback" % "logback-classic" % "1.1.3" % Runtime
+val shapeless = "com.chuusai" %% "shapeless" % "2.3.3"
 
 // the Json formatters are based on Play Json
 val playJson = "com.typesafe.play" %% "play-json" % "2.6.9"
@@ -72,7 +73,7 @@ lazy val skuberSettings = Seq(
 
 lazy val examplesSettings = Seq(
   name := "skuber-examples",
-  libraryDependencies ++= Seq(akka, akkaSlf4j, logback)
+  libraryDependencies ++= Seq(akka, akkaSlf4j, logback, shapeless)
 )
 
 // by default run the guestbook example when executing a fat examples JAR
