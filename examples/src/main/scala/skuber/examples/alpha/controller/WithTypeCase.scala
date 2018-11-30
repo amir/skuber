@@ -58,7 +58,7 @@ object WithTypeCase extends App {
       name = f.spec.fold("foo")(_.deploymentName),
       namespace = f.metadata.namespace,
       ownerReferences = List(OwnerReference(
-        apiVersion = "v1alpha1", kind = "Foo", name = "foo", uid = "1", controller = None, blockOwnerDeletion = None
+        apiVersion = f.apiVersion, kind = f.kind, name = f.metadata.name, uid = "1", controller = None, blockOwnerDeletion = None
       ))
     )).withReplicas(f.spec.fold(1)(_.replicas))
       .withLabelSelector(LabelSelector(labels.map(x => IsEqualRequirement(x._1, x._2)).toList :_*))
